@@ -82,6 +82,9 @@
     // success
     else {
         NSDictionary *results = result;
+        NSString *title = @"Success";
+        NSString *message = [NSString stringWithFormat:@"%@", results];
+        [self alertWithTitle:title andMessage:message];
     }
 
 }
