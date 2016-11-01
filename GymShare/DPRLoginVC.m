@@ -8,8 +8,9 @@
 
 #import "DPRLoginVC.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-@interface DPRLoginVC ()
+@interface DPRLoginVC () <FBSDKLoginButtonDelegate>
 
 @end
 
@@ -18,14 +19,101 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
     
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
+    FBSDKAccessToken *accessToken = [FBSDKAccessToken currentAccessToken];
+    // show login page
+    if (!accessToken) {
+        [self loginButton];
+    }
+    // skip login
+    else{
+        [self getUserInformation];
+    }
 
 }
+    
+- (void)loginButton{
+    
+    
+    // login button
+    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+    loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+    loginButton.center = self.view.center;
+    loginButton.delegate = self;
 
+    [self.view addSubview:loginButton];
+    
+}
+    
+- (void)getUserInformation{
+    
+    NSArray *fieldsArray = @[@"id, ",
+                             @"name, ",
+                             @"first_name, ",
+                             @"last_name, ",
+                             @"picture"];
+    
+    NSMutableString *fields = [[NSMutableString alloc] init];
+    for(NSString *field in fieldsArray){
+        [fields appendString:field];
+    }
+    
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                  initWithGraphPath:@"/me"
+                                  parameters:@{ @"fields" : fields }
+                                  HTTPMethod:@"GET"];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+        [self handleRequestCompletionWithResult:result error:error];
+    }];
+    
+    
+}
+    
+- (void)handleRequestCompletionWithResult:(id)result error:(NSError *)error
+{
+    // error
+    if (error) {
+        NSString *title = @"Graph Request Fail";
+        NSString *message = [NSString stringWithFormat:@"Graph API request failed with error:\n %@", error
+                             ];
+        [self alertWithTitle:title andMessage:message];
+    }
+    
+    // success
+    else {
+        NSDictionary *results = result;
+    }
+
+}
+    
+#pragma mark - FBSDKLoginButtonDelegate
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error
+{
+
+    if (error) {
+        [self alertWithTitle:@"Error" andMessage:[NSString stringWithFormat:@"Error: %@", error]];
+    } else if (result.isCancelled) {
+        [self alertWithTitle:@"Error" andMessage:@"Request canceled"];
+    } else {
+        [self getUserInformation];
+    }
+
+}
+    
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
+    
+}
+
+
+- (void) alertWithTitle:(NSString *)title andMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+    
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
