@@ -7,6 +7,7 @@
 //
 
 #import "DPRLoginVC.h"
+#import "UIColor+CustomColors.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
@@ -20,9 +21,11 @@
     
     [super viewDidLoad];
     
+    
     FBSDKAccessToken *accessToken = [FBSDKAccessToken currentAccessToken];
     // show login page
     if (!accessToken) {
+        [self setupUI];
         [self loginButton];
     }
     // skip login
@@ -87,6 +90,13 @@
         [self alertWithTitle:title andMessage:message];
     }
 
+}
+
+- (void)setupUI{
+
+	self.view.backgroundColor = [UIColor darkColor];
+	
+    
 }
     
 #pragma mark - FBSDKLoginButtonDelegate
