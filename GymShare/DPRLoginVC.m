@@ -11,7 +11,12 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
+@import FirebaseDatabase;
+@import FirebaseAuth;
+
 @interface DPRLoginVC () <FBSDKLoginButtonDelegate>
+
+@property (strong, nonatomic) FIRDatabaseReference *ref;
 
 @end
 
@@ -36,8 +41,7 @@
 }
     
 - (void)loginButton{
-    
-    
+	
     // login button
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
@@ -49,7 +53,8 @@
 }
     
 - (void)getUserInformation{
-    
+	
+	// information retrieval
     NSArray *fieldsArray = @[@"id, ",
                              @"name, ",
                              @"first_name, ",
@@ -60,7 +65,8 @@
     for(NSString *field in fieldsArray){
         [fields appendString:field];
     }
-    
+	
+	// make request
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
                                   initWithGraphPath:@"/me"
                                   parameters:@{ @"fields" : fields }
@@ -88,15 +94,42 @@
         NSString *title = @"Success";
         NSString *message = [NSString stringWithFormat:@"%@", results];
         [self alertWithTitle:title andMessage:message];
+		[self databaseWithResult:result];
     }
 
+}
+
+- (void)databaseWithResult:(NSDictionary *)dict{
+	
+	NSString *name = [dict objectForKey:@"name"];
+	NSString *identity = [dict objectForKey:@"id"];
+	
+	self.ref = [[FIRDatabase database] reference];
+	[[self.ref child:@"Testing 1"] setValue:@"Test"];
+	
+	//[self readFromDatabase];
+	
+}
+
+- (void)readFromDatabase{
+	
+	
+	NSString *userID = [FIRAuth auth].currentUser.uid;
+	[[[_ref child:@"users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+	  // Get user value
+	  NSString *name = snapshot.value[@"username"];
+			
+	  // ...
+		} withCancelBlock:^(NSError * _Nonnull error) {
+	  NSLog(@"%@", error.localizedDescription);
+		}];
+	
 }
 
 - (void)setupUI{
 
 	self.view.backgroundColor = [UIColor darkColor];
 	
-    
 }
     
 #pragma mark - FBSDKLoginButtonDelegate
