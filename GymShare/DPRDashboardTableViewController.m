@@ -82,9 +82,11 @@
 	}
 	// friends
 	else if(indexPath.section == 1){
-		
+		cell.title.text = @"Friends";
+		cell.subtitle.text = @"View your friends' profile pages to browse their public workouts.";
 	}
-	
+	cell.image.image = [UIImage imageNamed:@"user_image"];
+
     return cell;
 }
 

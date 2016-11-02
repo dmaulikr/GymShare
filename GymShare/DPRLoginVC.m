@@ -7,6 +7,7 @@
 //
 
 #import "DPRLoginVC.h"
+#import "DPRUser.h"
 #import "UIColor+CustomColors.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -38,18 +39,6 @@
         [self getUserInformation];
     }
 
-}
-    
-- (void)loginButton{
-	
-    // login button
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
-    loginButton.center = self.view.center;
-    loginButton.delegate = self;
-
-    [self.view addSubview:loginButton];
-    
 }
     
 - (void)getUserInformation{
@@ -85,53 +74,51 @@
         NSString *title = @"Graph Request Fail";
         NSString *message = [NSString stringWithFormat:@"Graph API request failed with error:\n %@", error
                              ];
-        //[self alertWithTitle:title andMessage:message];
+        [self alertWithTitle:title andMessage:message];
     }
     
     // success
     else {
-        NSDictionary *results = result;
-        NSString *title = @"Success";
-        NSString *message = [NSString stringWithFormat:@"%@", results];
-		//[self alertWithTitle:title andMessage:message];
-		[self databaseWithResult:result];
-		
-		self.navigationController.navigationBarHidden = YES;
-		[self performSegueWithIdentifier:@"dashboardSegue" sender:self];
+		[self loginSuccessfulWithResults:result];
     }
 
 }
+
+- (void)loginSuccessfulWithResults:(NSDictionary *)results{
+	
+	// enter results in database
+	[self databaseWithResult:results];
+
+	self.navigationController.navigationBarHidden = YES;
+	[self performSegueWithIdentifier:@"dashboardSegue" sender:self];
+	
+}
+
+#pragma mark - Firebase
 
 - (void)databaseWithResult:(NSDictionary *)dict{
 	
 	NSString *name = [dict objectForKey:@"name"];
 	NSString *identity = [dict objectForKey:@"id"];
+	NSString *image_url = [[[dict objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
+	
+	
 	
 	self.ref = [[FIRDatabase database] reference];
 	[[[_ref child:@"users"] child:identity]
-	 setValue:@{@"username": name}];
-	
-	//[self readFromDatabase];
+	 setValue:@{@"username": name,
+				@"image_url": image_url}];
 	
 }
 
 - (void)readFromDatabase{
-	
 	
 	[[_ref child:@"users"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
 		NSDictionary *usersDict = snapshot.value;
 		
 		NSLog(@"%@",usersDict);
 		
-		
-		
 	}];
-}
-
-- (void)setupUI{
-
-	self.view.backgroundColor = [UIColor darkColor];
-	
 }
     
 #pragma mark - FBSDKLoginButtonDelegate
@@ -139,6 +126,7 @@
 - (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error
 {
 
+	// after facebook login button interaction
     if (error) {
         [self alertWithTitle:@"Error" andMessage:[NSString stringWithFormat:@"Error: %@", error]];
     } else if (result.isCancelled) {
@@ -148,7 +136,27 @@
     }
 
 }
-    
+
+#pragma mark - UI
+
+- (void)setupUI{
+	
+	self.view.backgroundColor = [UIColor darkColor];
+	
+}
+
+- (void)loginButton{
+	
+	// login button
+	FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
+	loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends"];
+	loginButton.center = self.view.center;
+	loginButton.delegate = self;
+	
+	[self.view addSubview:loginButton];
+	
+}
+
 - (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
     
 }
@@ -166,15 +174,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
