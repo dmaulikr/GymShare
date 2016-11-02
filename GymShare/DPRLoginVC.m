@@ -85,7 +85,7 @@
         NSString *title = @"Graph Request Fail";
         NSString *message = [NSString stringWithFormat:@"Graph API request failed with error:\n %@", error
                              ];
-        [self alertWithTitle:title andMessage:message];
+        //[self alertWithTitle:title andMessage:message];
     }
     
     // success
@@ -93,8 +93,11 @@
         NSDictionary *results = result;
         NSString *title = @"Success";
         NSString *message = [NSString stringWithFormat:@"%@", results];
-        [self alertWithTitle:title andMessage:message];
+		//[self alertWithTitle:title andMessage:message];
 		[self databaseWithResult:result];
+		
+		self.navigationController.navigationBarHidden = YES;
+		[self performSegueWithIdentifier:@"dashboardSegue" sender:self];
     }
 
 }
@@ -108,7 +111,7 @@
 	[[[_ref child:@"users"] child:identity]
 	 setValue:@{@"username": name}];
 	
-	[self readFromDatabase];
+	//[self readFromDatabase];
 	
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+CustomColors.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @import Firebase;
@@ -25,7 +26,16 @@
     // Facebook Application Delegate
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
-    
+	
+	// initial settings
+	[[UITabBar appearance] setTintColor:[UIColor lightPurpleColor]];
+	[[UITabBar appearance] setBarTintColor:[UIColor darkishColor]];
+	[[UILabel appearance] setFont:[UIFont fontWithName:@"Helvetica-Light" size:14.0]];
+	[[UILabel appearance] setTextColor:[UIColor whiteColor]];
+	[[UINavigationBar appearance] setTintColor:[UIColor lightGreenColor]];
+	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+	[[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setTextColor:[UIColor whiteColor]];
+	
     return YES;
 }
 

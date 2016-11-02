@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E9C81BE1030459100FE8C32 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9AFA4E3F77CF0653774E8A /* Pods.framework */; };
+		638730B51DCA9D0E00D26A10 /* DPRDashboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730B41DCA9D0E00D26A10 /* DPRDashboardTableViewController.m */; };
+		638730B81DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730B71DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m */; };
+		638730BC1DCA9DE900D26A10 /* DPRUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730BB1DCA9DE900D26A10 /* DPRUIHelper.m */; };
+		638730BF1DCAA03700D26A10 /* DPRDashboardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730BE1DCAA03700D26A10 /* DPRDashboardTableViewCell.m */; };
 		6395880C1DC8401000ADDBC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395880B1DC8401000ADDBC3 /* main.m */; };
 		6395880F1DC8401000ADDBC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395880E1DC8401000ADDBC3 /* AppDelegate.m */; };
 		639588151DC8401000ADDBC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639588131DC8401000ADDBC3 /* Main.storyboard */; };
@@ -45,6 +49,14 @@
 /* Begin PBXFileReference section */
 		48CFC45036EC3C227A84DB91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		601B7F588582D0CCA1DB88C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		638730B31DCA9D0E00D26A10 /* DPRDashboardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRDashboardTableViewController.h; sourceTree = "<group>"; };
+		638730B41DCA9D0E00D26A10 /* DPRDashboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRDashboardTableViewController.m; sourceTree = "<group>"; };
+		638730B61DCA9D2000D26A10 /* DPRWorkoutsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRWorkoutsTableViewController.h; sourceTree = "<group>"; };
+		638730B71DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRWorkoutsTableViewController.m; sourceTree = "<group>"; };
+		638730BA1DCA9DE900D26A10 /* DPRUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRUIHelper.h; sourceTree = "<group>"; };
+		638730BB1DCA9DE900D26A10 /* DPRUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRUIHelper.m; sourceTree = "<group>"; };
+		638730BD1DCAA03700D26A10 /* DPRDashboardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRDashboardTableViewCell.h; sourceTree = "<group>"; };
+		638730BE1DCAA03700D26A10 /* DPRDashboardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRDashboardTableViewCell.m; sourceTree = "<group>"; };
 		639588071DC8401000ADDBC3 /* GymShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6395880B1DC8401000ADDBC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6395880D1DC8401000ADDBC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +123,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		638730B91DCA9DDB00D26A10 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				638730BA1DCA9DE900D26A10 /* DPRUIHelper.h */,
+				638730BB1DCA9DE900D26A10 /* DPRUIHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		639587FE1DC8400F00ADDBC3 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +163,7 @@
 				6395884C1DC8436C00ADDBC3 /* Controller */,
 				6395884D1DC8437500ADDBC3 /* Model */,
 				6395884E1DC8437900ADDBC3 /* View */,
+				638730B91DCA9DDB00D26A10 /* Helper */,
 				6395880A1DC8401000ADDBC3 /* Supporting Files */,
 				639588481DC8417000ADDBC3 /* Frameworks */,
 			);
@@ -197,6 +219,10 @@
 			children = (
 				639588491DC8436300ADDBC3 /* DPRLoginVC.h */,
 				6395884A1DC8436300ADDBC3 /* DPRLoginVC.m */,
+				638730B31DCA9D0E00D26A10 /* DPRDashboardTableViewController.h */,
+				638730B41DCA9D0E00D26A10 /* DPRDashboardTableViewController.m */,
+				638730B61DCA9D2000D26A10 /* DPRWorkoutsTableViewController.h */,
+				638730B71DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -211,6 +237,8 @@
 		6395884E1DC8437900ADDBC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				638730BD1DCAA03700D26A10 /* DPRDashboardTableViewCell.h */,
+				638730BE1DCAA03700D26A10 /* DPRDashboardTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -412,7 +440,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				639588181DC8401000ADDBC3 /* GymShare.xcdatamodeld in Sources */,
+				638730BF1DCAA03700D26A10 /* DPRDashboardTableViewCell.m in Sources */,
+				638730B51DCA9D0E00D26A10 /* DPRDashboardTableViewController.m in Sources */,
 				6395880F1DC8401000ADDBC3 /* AppDelegate.m in Sources */,
+				638730B81DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m in Sources */,
+				638730BC1DCA9DE900D26A10 /* DPRUIHelper.m in Sources */,
 				6395885D1DC85DC100ADDBC3 /* UIColor+CustomColors.m in Sources */,
 				6395880C1DC8401000ADDBC3 /* main.m in Sources */,
 				6395884B1DC8436300ADDBC3 /* DPRLoginVC.m in Sources */,
