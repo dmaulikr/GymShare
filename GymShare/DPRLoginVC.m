@@ -105,25 +105,24 @@
 	NSString *identity = [dict objectForKey:@"id"];
 	
 	self.ref = [[FIRDatabase database] reference];
-	[[self.ref child:@"Testing 1"] setValue:@"Test"];
+	[[[_ref child:@"users"] child:identity]
+	 setValue:@{@"username": name}];
 	
-	//[self readFromDatabase];
+	[self readFromDatabase];
 	
 }
 
 - (void)readFromDatabase{
 	
 	
-	NSString *userID = [FIRAuth auth].currentUser.uid;
-	[[[_ref child:@"users"] child:userID] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-	  // Get user value
-	  NSString *name = snapshot.value[@"username"];
-			
-	  // ...
-		} withCancelBlock:^(NSError * _Nonnull error) {
-	  NSLog(@"%@", error.localizedDescription);
-		}];
-	
+	[[_ref child:@"users"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
+		NSDictionary *usersDict = snapshot.value;
+		
+		NSLog(@"%@",usersDict);
+		
+		
+		
+	}];
 }
 
 - (void)setupUI{
