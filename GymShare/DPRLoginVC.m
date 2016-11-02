@@ -18,6 +18,7 @@
 @interface DPRLoginVC () <FBSDKLoginButtonDelegate>
 
 @property (strong, nonatomic) FIRDatabaseReference *ref;
+@property (strong, nonatomic) DPRUser *user;
 
 @end
 
@@ -48,7 +49,7 @@
                              @"name, ",
                              @"first_name, ",
                              @"last_name, ",
-                             @"picture"];
+                             @"picture.width(240).height(240)"];
     
     NSMutableString *fields = [[NSMutableString alloc] init];
     for(NSString *field in fieldsArray){
@@ -96,18 +97,12 @@
 
 #pragma mark - Firebase
 
-- (void)databaseWithResult:(NSDictionary *)dict{
+- (void)databaseWithResult:(NSDictionary *)info{
 	
-	NSString *name = [dict objectForKey:@"name"];
-	NSString *identity = [dict objectForKey:@"id"];
-	NSString *image_url = [[[dict objectForKey:@"picture"] objectForKey:@"data"] objectForKey:@"url"];
-	
-	
-	
+	// user
+	self.user = [DPRUser sharedModel];
 	self.ref = [[FIRDatabase database] reference];
-	[[[_ref child:@"users"] child:identity]
-	 setValue:@{@"username": name,
-				@"image_url": image_url}];
+	[_user addInformation:info withDatabaseReference:_ref];
 	
 }
 

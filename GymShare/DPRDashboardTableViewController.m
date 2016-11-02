@@ -8,12 +8,14 @@
 
 #import "DPRDashboardTableViewController.h"
 #import "DPRUIHelper.h"
+#import "DPRUser.h"
 #import "DPRDashboardTableViewCell.h"
 #import "UIColor+CustomColors.h"
 
 @interface DPRDashboardTableViewController ()
 
 @property (strong, nonatomic) DPRUIHelper *uiHelper;
+@property (strong, nonatomic) DPRUser *user;
 
 @end
 
@@ -21,10 +23,11 @@
 
 - (void)viewDidLoad {
 	
-    [super viewDidLoad];
+	[self setupData];
+
+	[super viewDidLoad];
 	
 	[self setupUI];
-	[self setupData];
 }
 
 - (void)setupUI{
@@ -50,6 +53,7 @@
 	NSDictionary *fontDictionary = @{NSFontAttributeName : customFont};
 	[settingsButton setTitleTextAttributes:fontDictionary forState:UIControlStateNormal];
 	self.navigationItem.rightBarButtonItem = settingsButton;
+	
 }
 
 - (void)showSettings{
@@ -57,6 +61,8 @@
 }
 
 - (void)setupData{
+	
+	self.user = [DPRUser sharedModel];
 	
 }
 
@@ -74,18 +80,20 @@
 	
     DPRDashboardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
 	
+	UIImage *picture = _user.picture;
+	
 	// profile
 	if(indexPath.section == 0){
-		//cell.image.image = [UIImage imageNamed:@"handshake.png"];
-		cell.title.text = @"Profile";
+		cell.image.image = _user.picture;
+		cell.title.text = _user.fullName;
 		cell.subtitle.text = @"View your profile page.";
 	}
 	// friends
 	else if(indexPath.section == 1){
+		cell.image.image = [UIImage imageNamed:@"user_image"];
 		cell.title.text = @"Friends";
 		cell.subtitle.text = @"View your friends' profile pages to browse their public workouts.";
 	}
-	cell.image.image = [UIImage imageNamed:@"user_image"];
 
     return cell;
 }
