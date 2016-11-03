@@ -47,6 +47,13 @@
 									action:nil];
 	[[self navigationItem] setBackBarButtonItem:newBackButton];
 	
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addWorkout)];
+	self.navigationItem.rightBarButtonItem = addButton;
+	
+}
+
+- (void)addWorkout{
+	
 }
 
 #pragma mark - Table view data source
