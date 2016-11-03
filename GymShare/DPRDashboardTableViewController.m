@@ -57,7 +57,7 @@
 }
 
 - (void)showSettings{
-	
+	[self performSegueWithIdentifier:@"settingsSegue" sender:self];
 }
 
 - (void)setupData{

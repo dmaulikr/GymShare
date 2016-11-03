@@ -1,16 +1,16 @@
 //
-//  DPRFriendTableViewCell.m
+//  DPRSettingsTableViewCell.m
 //  GymShare
 //
 //  Created by David Richardson on 11/2/16.
 //  Copyright © 2016 David Richardson. All rights reserved.
 //
 
-#import "DPRFriendTableViewCell.h"
+#import "DPRSettingsTableViewCell.h"
 #import "DPRUIHelper.h"
 #import "UIColor+CustomColors.h"
 
-@implementation DPRFriendTableViewCell
+@implementation DPRSettingsTableViewCell
 
 - (void)awakeFromNib {
 	

@@ -17,6 +17,10 @@
 		638730C91DCAB38200D26A10 /* DPRFriendsListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730C81DCAB38200D26A10 /* DPRFriendsListTableViewController.m */; };
 		638730CC1DCAB3B300D26A10 /* DPRFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730CB1DCAB3B300D26A10 /* DPRFriendTableViewCell.m */; };
 		638730CE1DCAB5BF00D26A10 /* licenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = 638730CD1DCAB5BF00D26A10 /* licenses.txt */; };
+		638730D11DCAB6FD00D26A10 /* DPRSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730D01DCAB6FD00D26A10 /* DPRSettingsTableViewController.m */; };
+		638730D41DCAB73700D26A10 /* DPRSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730D31DCAB73700D26A10 /* DPRSettingsTableViewCell.m */; };
+		638730D71DCAB98700D26A10 /* DPRInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730D61DCAB98700D26A10 /* DPRInformationViewController.m */; };
+		638730DA1DCABA0900D26A10 /* DPRContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730D91DCABA0900D26A10 /* DPRContentHelper.m */; };
 		6395880C1DC8401000ADDBC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395880B1DC8401000ADDBC3 /* main.m */; };
 		6395880F1DC8401000ADDBC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395880E1DC8401000ADDBC3 /* AppDelegate.m */; };
 		639588151DC8401000ADDBC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639588131DC8401000ADDBC3 /* Main.storyboard */; };
@@ -71,6 +75,14 @@
 		638730CA1DCAB3B300D26A10 /* DPRFriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRFriendTableViewCell.h; sourceTree = "<group>"; };
 		638730CB1DCAB3B300D26A10 /* DPRFriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRFriendTableViewCell.m; sourceTree = "<group>"; };
 		638730CD1DCAB5BF00D26A10 /* licenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = licenses.txt; sourceTree = "<group>"; };
+		638730CF1DCAB6FD00D26A10 /* DPRSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRSettingsTableViewController.h; sourceTree = "<group>"; };
+		638730D01DCAB6FD00D26A10 /* DPRSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRSettingsTableViewController.m; sourceTree = "<group>"; };
+		638730D21DCAB73700D26A10 /* DPRSettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRSettingsTableViewCell.h; sourceTree = "<group>"; };
+		638730D31DCAB73700D26A10 /* DPRSettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRSettingsTableViewCell.m; sourceTree = "<group>"; };
+		638730D51DCAB98700D26A10 /* DPRInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRInformationViewController.h; sourceTree = "<group>"; };
+		638730D61DCAB98700D26A10 /* DPRInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRInformationViewController.m; sourceTree = "<group>"; };
+		638730D81DCABA0900D26A10 /* DPRContentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRContentHelper.h; sourceTree = "<group>"; };
+		638730D91DCABA0900D26A10 /* DPRContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRContentHelper.m; sourceTree = "<group>"; };
 		639588071DC8401000ADDBC3 /* GymShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6395880B1DC8401000ADDBC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6395880D1DC8401000ADDBC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,6 +154,8 @@
 			children = (
 				638730BA1DCA9DE900D26A10 /* DPRUIHelper.h */,
 				638730BB1DCA9DE900D26A10 /* DPRUIHelper.m */,
+				638730D81DCABA0900D26A10 /* DPRContentHelper.h */,
+				638730D91DCABA0900D26A10 /* DPRContentHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -151,6 +165,10 @@
 			children = (
 				638730C71DCAB38200D26A10 /* DPRFriendsListTableViewController.h */,
 				638730C81DCAB38200D26A10 /* DPRFriendsListTableViewController.m */,
+				638730CF1DCAB6FD00D26A10 /* DPRSettingsTableViewController.h */,
+				638730D01DCAB6FD00D26A10 /* DPRSettingsTableViewController.m */,
+				638730D51DCAB98700D26A10 /* DPRInformationViewController.h */,
+				638730D61DCAB98700D26A10 /* DPRInformationViewController.m */,
 			);
 			name = 1;
 			sourceTree = "<group>";
@@ -270,6 +288,8 @@
 				638730C11DCAA45100D26A10 /* DPRWorkoutsTableViewCell.m */,
 				638730CA1DCAB3B300D26A10 /* DPRFriendTableViewCell.h */,
 				638730CB1DCAB3B300D26A10 /* DPRFriendTableViewCell.m */,
+				638730D21DCAB73700D26A10 /* DPRSettingsTableViewCell.h */,
+				638730D31DCAB73700D26A10 /* DPRSettingsTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -472,9 +492,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				639588181DC8401000ADDBC3 /* GymShare.xcdatamodeld in Sources */,
+				638730D41DCAB73700D26A10 /* DPRSettingsTableViewCell.m in Sources */,
 				638730BF1DCAA03700D26A10 /* DPRDashboardTableViewCell.m in Sources */,
+				638730D11DCAB6FD00D26A10 /* DPRSettingsTableViewController.m in Sources */,
+				638730D71DCAB98700D26A10 /* DPRInformationViewController.m in Sources */,
 				638730C91DCAB38200D26A10 /* DPRFriendsListTableViewController.m in Sources */,
 				638730C21DCAA45100D26A10 /* DPRWorkoutsTableViewCell.m in Sources */,
+				638730DA1DCABA0900D26A10 /* DPRContentHelper.m in Sources */,
 				638730B51DCA9D0E00D26A10 /* DPRDashboardTableViewController.m in Sources */,
 				6395880F1DC8401000ADDBC3 /* AppDelegate.m in Sources */,
 				638730B81DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m in Sources */,
