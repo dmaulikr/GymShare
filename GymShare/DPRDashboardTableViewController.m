@@ -80,8 +80,6 @@
 	
     DPRDashboardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
 	
-	UIImage *picture = _user.picture;
-	
 	// profile
 	if(indexPath.section == 0){
 		cell.image.image = _user.picture;
@@ -90,12 +88,20 @@
 	}
 	// friends
 	else if(indexPath.section == 1){
-		cell.image.image = [UIImage imageNamed:@"user_image"];
+		cell.image.image = [UIImage imageNamed:@"friends"];
 		cell.title.text = @"Friends";
 		cell.subtitle.text = @"View your friends' profile pages to browse their public workouts.";
 	}
 
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	if(indexPath.section == 1){
+		[self performSegueWithIdentifier:@"friendsListSegue" sender:self];
+	}
+	
 }
 
 // section title

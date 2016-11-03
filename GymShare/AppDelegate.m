@@ -32,7 +32,7 @@
 	[[UITabBar appearance] setBarTintColor:[UIColor darkishColor]];
 	[[UILabel appearance] setFont:[UIFont fontWithName:@"Helvetica-Light" size:14.0]];
 	[[UILabel appearance] setTextColor:[UIColor whiteColor]];
-	[[UINavigationBar appearance] setTintColor:[UIColor lightGreenColor]];
+	[[UINavigationBar appearance] setTintColor:[UIColor lightPurpleColor]];
 	[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 	[[UILabel appearanceWhenContainedInInstancesOfClasses:@[[UITableViewHeaderFooterView class]]] setTextColor:[UIColor whiteColor]];
 	
