@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0E9C81BE1030459100FE8C32 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D9AFA4E3F77CF0653774E8A /* Pods.framework */; };
+		6311F8F91DD3D3CB00A420F1 /* DPRWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6311F8F81DD3D3CB00A420F1 /* DPRWorkout.m */; };
+		6311F8FC1DD3D3D800A420F1 /* DPRExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6311F8FB1DD3D3D800A420F1 /* DPRExercise.m */; };
+		63274C631DE76EE200826A33 /* DPRDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274C621DE76EE200826A33 /* DPRDatabaseHelper.m */; };
+		63274C6B1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274C6A1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m */; };
 		638730B51DCA9D0E00D26A10 /* DPRDashboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730B41DCA9D0E00D26A10 /* DPRDashboardTableViewController.m */; };
 		638730B81DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730B71DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m */; };
 		638730BC1DCA9DE900D26A10 /* DPRUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730BB1DCA9DE900D26A10 /* DPRUIHelper.m */; };
@@ -58,6 +62,14 @@
 /* Begin PBXFileReference section */
 		48CFC45036EC3C227A84DB91 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		601B7F588582D0CCA1DB88C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6311F8F71DD3D3CB00A420F1 /* DPRWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRWorkout.h; sourceTree = "<group>"; };
+		6311F8F81DD3D3CB00A420F1 /* DPRWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRWorkout.m; sourceTree = "<group>"; };
+		6311F8FA1DD3D3D800A420F1 /* DPRExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRExercise.h; sourceTree = "<group>"; };
+		6311F8FB1DD3D3D800A420F1 /* DPRExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRExercise.m; sourceTree = "<group>"; };
+		63274C611DE76EE200826A33 /* DPRDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRDatabaseHelper.h; sourceTree = "<group>"; };
+		63274C621DE76EE200826A33 /* DPRDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRDatabaseHelper.m; sourceTree = "<group>"; };
+		63274C691DE7756E00826A33 /* DPRNewWorkoutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRNewWorkoutTableViewController.h; sourceTree = "<group>"; };
+		63274C6A1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRNewWorkoutTableViewController.m; sourceTree = "<group>"; };
 		638730B31DCA9D0E00D26A10 /* DPRDashboardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRDashboardTableViewController.h; sourceTree = "<group>"; };
 		638730B41DCA9D0E00D26A10 /* DPRDashboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRDashboardTableViewController.m; sourceTree = "<group>"; };
 		638730B61DCA9D2000D26A10 /* DPRWorkoutsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRWorkoutsTableViewController.h; sourceTree = "<group>"; };
@@ -149,13 +161,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		63274C651DE773F300826A33 /* 2 */ = {
+			isa = PBXGroup;
+			children = (
+				63274C691DE7756E00826A33 /* DPRNewWorkoutTableViewController.h */,
+				63274C6A1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m */,
+			);
+			name = 2;
+			sourceTree = "<group>";
+		};
 		638730B91DCA9DDB00D26A10 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				638730BA1DCA9DE900D26A10 /* DPRUIHelper.h */,
+				63274C621DE76EE200826A33 /* DPRDatabaseHelper.m */,
 				638730BB1DCA9DE900D26A10 /* DPRUIHelper.m */,
-				638730D81DCABA0900D26A10 /* DPRContentHelper.h */,
 				638730D91DCABA0900D26A10 /* DPRContentHelper.m */,
+				63274C611DE76EE200826A33 /* DPRDatabaseHelper.h */,
+				638730D81DCABA0900D26A10 /* DPRContentHelper.h */,
+				638730BA1DCA9DE900D26A10 /* DPRUIHelper.h */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -266,6 +289,7 @@
 				638730B61DCA9D2000D26A10 /* DPRWorkoutsTableViewController.h */,
 				638730B71DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m */,
 				638730C61DCAB2E100D26A10 /* 1 */,
+				63274C651DE773F300826A33 /* 2 */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -275,6 +299,10 @@
 			children = (
 				638730C31DCAA73600D26A10 /* DPRUser.h */,
 				638730C41DCAA73600D26A10 /* DPRUser.m */,
+				6311F8F71DD3D3CB00A420F1 /* DPRWorkout.h */,
+				6311F8F81DD3D3CB00A420F1 /* DPRWorkout.m */,
+				6311F8FB1DD3D3D800A420F1 /* DPRExercise.m */,
+				6311F8FA1DD3D3D800A420F1 /* DPRExercise.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -367,7 +395,7 @@
 		639587FF1DC8400F00ADDBC3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "David Richardson";
 				TargetAttributes = {
 					639588061DC8400F00ADDBC3 = {
@@ -491,6 +519,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63274C6B1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m in Sources */,
+				6311F8F91DD3D3CB00A420F1 /* DPRWorkout.m in Sources */,
 				639588181DC8401000ADDBC3 /* GymShare.xcdatamodeld in Sources */,
 				638730D41DCAB73700D26A10 /* DPRSettingsTableViewCell.m in Sources */,
 				638730BF1DCAA03700D26A10 /* DPRDashboardTableViewCell.m in Sources */,
@@ -499,8 +529,10 @@
 				638730C91DCAB38200D26A10 /* DPRFriendsListTableViewController.m in Sources */,
 				638730C21DCAA45100D26A10 /* DPRWorkoutsTableViewCell.m in Sources */,
 				638730DA1DCABA0900D26A10 /* DPRContentHelper.m in Sources */,
+				63274C631DE76EE200826A33 /* DPRDatabaseHelper.m in Sources */,
 				638730B51DCA9D0E00D26A10 /* DPRDashboardTableViewController.m in Sources */,
 				6395880F1DC8401000ADDBC3 /* AppDelegate.m in Sources */,
+				6311F8FC1DD3D3D800A420F1 /* DPRExercise.m in Sources */,
 				638730B81DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m in Sources */,
 				638730C51DCAA73600D26A10 /* DPRUser.m in Sources */,
 				638730BC1DCA9DE900D26A10 /* DPRUIHelper.m in Sources */,
@@ -580,6 +612,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -627,6 +660,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

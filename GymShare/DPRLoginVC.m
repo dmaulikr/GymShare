@@ -33,7 +33,6 @@
     // show login page
     if (!accessToken) {
         [self setupUI];
-        [self loginButton];
     }
     // skip login
     else{
@@ -105,16 +104,6 @@
 	[_user addInformation:info withDatabaseReference:_ref];
 	
 }
-
-- (void)readFromDatabase{
-	
-	[[_ref child:@"users"] observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-		NSDictionary *usersDict = snapshot.value;
-		
-		NSLog(@"%@",usersDict);
-		
-	}];
-}
     
 #pragma mark - FBSDKLoginButtonDelegate
 
@@ -137,7 +126,8 @@
 - (void)setupUI{
 	
 	self.view.backgroundColor = [UIColor darkColor];
-	
+	[self loginButton];
+
 }
 
 - (void)loginButton{

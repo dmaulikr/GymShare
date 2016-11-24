@@ -47,12 +47,14 @@
 									action:nil];
 	[[self navigationItem] setBackBarButtonItem:newBackButton];
 	
+	// add button
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addWorkout)];
 	self.navigationItem.rightBarButtonItem = addButton;
 	
 }
 
 - (void)addWorkout{
+	
 	
 }
 

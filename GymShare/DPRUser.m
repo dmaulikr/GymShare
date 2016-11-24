@@ -30,6 +30,9 @@
 	NSData *data = [NSData dataWithContentsOfURL:url];
 	UIImage *picture = [[UIImage alloc] initWithData:data];
 	self.picture = picture;
+	
+	// workouts
+	self.workouts = [[NSMutableArray alloc] init];
 
 }
 

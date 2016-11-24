@@ -21,6 +21,8 @@
 @property (nonatomic, retain) NSString *idNumber;
 @property (nonatomic, retain) UIImage *picture;
 
+@property (nonatomic, retain) NSMutableArray *workouts;
+
 // methods
 + (instancetype)sharedModel;
 - (void)addInformation:(NSDictionary *)info withDatabaseReference:(FIRDatabaseReference *)ref;
