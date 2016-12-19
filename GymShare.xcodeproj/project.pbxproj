@@ -12,6 +12,7 @@
 		6311F8FC1DD3D3D800A420F1 /* DPRExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6311F8FB1DD3D3D800A420F1 /* DPRExercise.m */; };
 		63274C631DE76EE200826A33 /* DPRDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274C621DE76EE200826A33 /* DPRDatabaseHelper.m */; };
 		63274C6B1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274C6A1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m */; };
+		63274C6E1DE7760900826A33 /* DPRNewWorkoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63274C6D1DE7760900826A33 /* DPRNewWorkoutTableViewCell.m */; };
 		638730B51DCA9D0E00D26A10 /* DPRDashboardTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730B41DCA9D0E00D26A10 /* DPRDashboardTableViewController.m */; };
 		638730B81DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730B71DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m */; };
 		638730BC1DCA9DE900D26A10 /* DPRUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 638730BB1DCA9DE900D26A10 /* DPRUIHelper.m */; };
@@ -70,6 +71,8 @@
 		63274C621DE76EE200826A33 /* DPRDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRDatabaseHelper.m; sourceTree = "<group>"; };
 		63274C691DE7756E00826A33 /* DPRNewWorkoutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRNewWorkoutTableViewController.h; sourceTree = "<group>"; };
 		63274C6A1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRNewWorkoutTableViewController.m; sourceTree = "<group>"; };
+		63274C6C1DE7760900826A33 /* DPRNewWorkoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRNewWorkoutTableViewCell.h; sourceTree = "<group>"; };
+		63274C6D1DE7760900826A33 /* DPRNewWorkoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRNewWorkoutTableViewCell.m; sourceTree = "<group>"; };
 		638730B31DCA9D0E00D26A10 /* DPRDashboardTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRDashboardTableViewController.h; sourceTree = "<group>"; };
 		638730B41DCA9D0E00D26A10 /* DPRDashboardTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRDashboardTableViewController.m; sourceTree = "<group>"; };
 		638730B61DCA9D2000D26A10 /* DPRWorkoutsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRWorkoutsTableViewController.h; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				638730CB1DCAB3B300D26A10 /* DPRFriendTableViewCell.m */,
 				638730D21DCAB73700D26A10 /* DPRSettingsTableViewCell.h */,
 				638730D31DCAB73700D26A10 /* DPRSettingsTableViewCell.m */,
+				63274C6C1DE7760900826A33 /* DPRNewWorkoutTableViewCell.h */,
+				63274C6D1DE7760900826A33 /* DPRNewWorkoutTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 				638730BC1DCA9DE900D26A10 /* DPRUIHelper.m in Sources */,
 				6395885D1DC85DC100ADDBC3 /* UIColor+CustomColors.m in Sources */,
 				6395880C1DC8401000ADDBC3 /* main.m in Sources */,
+				63274C6E1DE7760900826A33 /* DPRNewWorkoutTableViewCell.m in Sources */,
 				6395884B1DC8436300ADDBC3 /* DPRLoginVC.m in Sources */,
 				638730CC1DCAB3B300D26A10 /* DPRFriendTableViewCell.m in Sources */,
 			);
