@@ -41,7 +41,6 @@
 		6395884B1DC8436300ADDBC3 /* DPRLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395884A1DC8436300ADDBC3 /* DPRLoginVC.m */; };
 		6395885A1DC85A6C00ADDBC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 639588591DC85A6C00ADDBC3 /* GoogleService-Info.plist */; };
 		6395885D1DC85DC100ADDBC3 /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 6395885C1DC85DC100ADDBC3 /* UIColor+CustomColors.m */; };
-		63BC55B11E08787400168D54 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63BC55B01E08787400168D54 /* TestTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,8 +122,6 @@
 		639588591DC85A6C00ADDBC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6395885B1DC85DC100ADDBC3 /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		6395885C1DC85DC100ADDBC3 /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CustomColors.m"; sourceTree = "<group>"; };
-		63BC55AF1E08787400168D54 /* TestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
-		63BC55B01E08787400168D54 /* TestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
 		6D9AFA4E3F77CF0653774E8A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,8 +169,6 @@
 			children = (
 				63274C691DE7756E00826A33 /* DPRNewWorkoutTableViewController.h */,
 				63274C6A1DE7756E00826A33 /* DPRNewWorkoutTableViewController.m */,
-				63BC55AF1E08787400168D54 /* TestTableViewCell.h */,
-				63BC55B01E08787400168D54 /* TestTableViewCell.m */,
 			);
 			name = 2;
 			sourceTree = "<group>";
@@ -544,7 +539,6 @@
 				6395880F1DC8401000ADDBC3 /* AppDelegate.m in Sources */,
 				6311F8FC1DD3D3D800A420F1 /* DPRExercise.m in Sources */,
 				638730B81DCA9D2000D26A10 /* DPRWorkoutsTableViewController.m in Sources */,
-				63BC55B11E08787400168D54 /* TestTableViewCell.m in Sources */,
 				638730C51DCAA73600D26A10 /* DPRUser.m in Sources */,
 				638730BC1DCA9DE900D26A10 /* DPRUIHelper.m in Sources */,
 				6395885D1DC85DC100ADDBC3 /* UIColor+CustomColors.m in Sources */,
